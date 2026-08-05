@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Sacramento&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-heading: 'Playfair Display', serif;
+  --font-body: 'Montserrat', sans-serif;
+  --font-handwriting: 'Sacramento', cursive;
+  
+  --color-rose-gold-50: #fff8f8;
+  --color-rose-gold-100: #ffe4e6;
+  --color-rose-gold-200: #fecdd3;
+  --color-rose-gold-300: #fda4af;
+  --color-rose-gold-400: #fb7185;
+  --color-rose-gold-500: #f43f5e;
+  --color-rose-gold-600: #e11d48;
+  --color-rose-gold-700: #be123c;
+  --color-rose-gold-800: #9f1239;
+  
+  --color-burgundy-950: #3b1116;
+  --color-burgundy-900: #4c1d24;
+  --color-burgundy-800: #682932;
+  --color-burgundy-700: #884a55;
+  --color-burgundy-600: #a26570;
+  
+  --color-gold-accent: #d4af37;
+  --color-gold-accent-dark: #b89320;
+  
+  --animate-spin-slow: spin-slow 8s linear infinite;
+  --animate-flicker: flicker 0.6s infinite alternate;
+  --animate-beat: beat 1.5s infinite;
+  --animate-bounce-subtle: bounce-subtle 2s infinite;
+  --animate-fade-up: fade-up 1.5s ease-out forwards;
+  --animate-stamp-in: stamp-in 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+
+  @keyframes spin-slow {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+  @keyframes flicker {
+    0% { transform: rotate(-2deg) scale(0.95); filter: drop-shadow(0 0 5px #f59e0b); }
+    50% { transform: rotate(1deg) scale(1); filter: drop-shadow(0 0 15px #ea580c); }
+    100% { transform: rotate(-1deg) scale(1.05); filter: drop-shadow(0 0 25px #ea580c); }
+  }
+  @keyframes beat {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.15); }
+  }
+  @keyframes bounce-subtle {
+    0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+    40% { transform: translateY(-8px); }
+    60% { transform: translateY(-4px); }
+  }
+  @keyframes fade-up {
+    0% { opacity: 0; transform: translate(-50%, 0); }
+    50% { opacity: 0.8; }
+    100% { opacity: 0; transform: translate(-50%, -40px); }
+  }
+  @keyframes stamp-in {
+    0% { transform: rotate(-12deg) scale(3); opacity: 0; }
+    80% { transform: rotate(-12deg) scale(0.95); opacity: 0.8; }
+    100% { transform: rotate(-12deg) scale(1); opacity: 1; }
+  }
+}
+
+body {
+  font-family: var(--font-body);
+  background: linear-gradient(135deg, var(--color-rose-gold-50) 0%, var(--color-rose-gold-100) 100%);
+  color: var(--color-burgundy-900);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Glassmorphism custom components */
+.glass-card {
+  background: rgba(255, 255, 255, 0.45);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  box-shadow: 0 8px 32px 0 rgba(225, 29, 72, 0.08);
+}
+
+.glass-card-hover:hover {
+  background: rgba(255, 255, 255, 0.65);
+  box-shadow: 0 12px 40px 0 rgba(225, 29, 72, 0.15);
+}
+
+/* Custom classes for envelope 3D */
+.perspective-1000 {
+  perspective: 1000px;
+}
+
+.transform-style-3d {
+  transform-style: preserve-3d;
+}
+
+.backface-hidden {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+/* Hide scrollbars but keep scrolling functionality */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
