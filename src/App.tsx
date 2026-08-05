@@ -2,18 +2,10 @@ import React, { useState, useEffect, useRef } from 'react';
 import confetti from 'canvas-confetti';
 import { 
   Heart, 
-  Gift, 
-  Music, 
   Pause, 
   Play, 
-  Flame, 
   Sparkles, 
   X, 
-  ArrowDown, 
-  Calendar, 
-  Ticket,
-  Smile,
-  Zap,
   Volume2,
   ChevronLeft,
   ChevronRight,
