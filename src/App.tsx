@@ -33,9 +33,6 @@ export default function App() {
   // --- States ---
   const [timeLeft, setTimeLeft] = useState({ days: '00', hours: '00', minutes: '00', seconds: '00' });
   const [isUnlocked, setIsUnlocked] = useState(false);
-  const [isSimulatorOn, setIsSimulatorOn] = useState(() => {
-    return localStorage.getItem('birthday_sim_on') === 'true';
-  });
 
   const [isMusicPlaying, setIsMusicPlaying] = useState(false);
   const [activeTab, setActiveTab] = useState<TabType>('welcome');
@@ -179,11 +176,6 @@ export default function App() {
   // 2. Countdown Timer
   useEffect(() => {
     const timer = setInterval(() => {
-      if (isSimulatorOn) {
-        setIsUnlocked(true);
-        return;
-      }
-
       const now = new Date().getTime();
       const distance = BIRTHDAY_TIME - now;
 
@@ -207,17 +199,13 @@ export default function App() {
     }, 1000);
 
     // Initial check
-    if (isSimulatorOn) {
+    const now = new Date().getTime();
+    if (BIRTHDAY_TIME - now <= 0) {
       setIsUnlocked(true);
-    } else {
-      const now = new Date().getTime();
-      if (BIRTHDAY_TIME - now <= 0) {
-        setIsUnlocked(true);
-      }
     }
 
     return () => clearInterval(timer);
-  }, [isSimulatorOn]);
+  }, []);
 
   // 3. Particles background
   useEffect(() => {
@@ -319,16 +307,6 @@ export default function App() {
   }, []);
 
   // --- Interactions ---
-
-  // Simulator Toggle
-  const toggleSimulator = () => {
-    const nextVal = !isSimulatorOn;
-    setIsSimulatorOn(nextVal);
-    localStorage.setItem('birthday_sim_on', String(nextVal));
-    if (nextVal) {
-      confetti({ particleCount: 30, spread: 60, origin: { y: 0.8 } });
-    }
-  };
 
   // Open envelope
   const handleEnvelopeClick = () => {
@@ -840,7 +818,7 @@ export default function App() {
         Receives padding to prevent any overlapping with the simulator or player.
       */}
       <footer className="relative z-10 text-center py-6 text-[10px] md:text-xs text-burgundy-600 border-t border-rose-gold-200/20 w-full mt-auto">
-        <p>Dibuat dengan segenap rasa sayang ❤️ untuk Pacarku Tercinta</p>
+        <p>Dibuat dengan segenap rasa sayang ❤️ untuk Pacar Mamas Tercinta</p>
       </footer>
 
       {/* ==========================================
@@ -900,18 +878,6 @@ export default function App() {
         </div>
       )}
 
-      {/* Floating Simulator Test Mode Toggle */}
-      <button
-        onClick={toggleSimulator}
-        id="simulator-toggle"
-        className="fixed bottom-6 right-6 z-[1000] glass-card flex items-center gap-2 py-2.5 px-5 rounded-full text-xs font-bold text-burgundy-900 border border-rose-gold-300 shadow-lg hover:bg-white hover:scale-105 transition-all duration-300 cursor-pointer"
-        title="Simulasi Tampilan Hari Ulang Tahun (14 Agustus)"
-      >
-        ⚙️ Mode Test Hari-H:{' '}
-        <span className={`font-black ${isSimulatorOn ? 'text-emerald-600' : 'text-rose-600'}`}>
-          {isSimulatorOn ? 'ON' : 'OFF'}
-        </span>
-      </button>
     </div>
   );
 }
