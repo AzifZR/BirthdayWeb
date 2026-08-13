@@ -13,7 +13,7 @@ import {
 } from 'lucide-react';
 
 // Target Birthday Date: 14 August 2026
-const BIRTHDAY_TIME = new Date("August 14, 2026 00:00:00").getTime();
+const BIRTHDAY_TIME = new Date("August 14, 2026 07:00:00").getTime();
 
 interface PolaroidCard {
   id: number;
@@ -542,7 +542,7 @@ export default function App() {
                         Halo Baby, <Heart className="w-3 h-3 fill-rose-gold-500 text-rose-gold-500" />
                       </h3>
                       <p className="text-[10px] text-burgundy-900 leading-relaxed text-justify line-clamp-3 md:line-clamp-4">
-                        Selamat ulang tahun yang ke-20 ya babyyy! Hari ini adalah hari yang sangat-sangat spesial, tidak hanya untuk kamu, tapi juga untuk mamas 
+                        Selamat ulang tahun yang ke-20 ya babyyy! Hari ini adalah hari yang sangat-sangat spesial, tidak hanya untuk kamu, tapi juga untuk mamas
                         karena mamas bisa merayakan hari kelahiran orang yang...
                       </p>
                       <span className="text-[9px] text-right text-burgundy-700 font-medium">Klik untuk perbesar...</span>
@@ -853,17 +853,17 @@ export default function App() {
                 Halo Baby, <Heart className="w-5 h-5 fill-rose-gold-500 text-rose-gold-500 animate-pulse" />
               </h3>
               <p className="text-burgundy-900 text-sm leading-relaxed text-justify indent-6">
-                Selamat ulang tahun yang ke-20 ya babyyy! Hari ini adalah hari yang sangat-sangat spesial, tidak hanya untuk kamu, tapi juga untuk mamas 
+                Selamat ulang tahun yang ke-20 ya babyyy! Hari ini adalah hari yang sangat-sangat spesial, tidak hanya untuk kamu, tapi juga untuk mamas
                 karena mamas bisa merayakan hari kelahiran orang yang paling berharga dalam hidup mamas.
               </p>
               <p className="text-burgundy-900 text-sm leading-relaxed text-justify indent-6">
-                Memasuki usia 20 tahun adalah awal dari babak baru yang luar biasa. Aku tahu perjalanan ke depan mungkin punya 
-                tantangan baru, tapi aku ingin kamu tahu kalau mamas akan selalu ada di sini untuk mendukungmu, mendengarkan ceritamu, 
+                Memasuki usia 20 tahun adalah awal dari babak baru yang luar biasa. Aku tahu perjalanan ke depan mungkin punya
+                tantangan baru, tapi aku ingin kamu tahu kalau mamas akan selalu ada di sini untuk mendukungmu, mendengarkan ceritamu,
                 dan menemani setiap langkahmu.
               </p>
               <p className="text-burgundy-900 text-sm leading-relaxed text-justify indent-6">
-                Terima kasih ya sudah menjadi sosok yang selalu membawa keceriaan, kasih sayang, dan kehangatan. Senyumanmu itu 
-                selalu bisa mengubah hari-hari biasa jadi terasa luar biasa buat mamas. Semoga di usia yang baru ini, kamu selalu 
+                Terima kasih ya sudah menjadi sosok yang selalu membawa keceriaan, kasih sayang, dan kehangatan. Senyumanmu itu
+                selalu bisa mengubah hari-hari biasa jadi terasa luar biasa buat mamas. Semoga di usia yang baru ini, kamu selalu
                 diberikan kesehatan, kebahagiaan, kemudahan dalam meraih impianmu, dan selalu dikelilingi oleh hal-baik.
               </p>
               <p className="text-burgundy-900 text-sm leading-relaxed text-justify indent-6 font-semibold text-rose-gold-600">
